@@ -1,0 +1,166 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main-container {
+  background-image: url('https://th.bing.com/th/id/OIP.qAxZayCj8VqYyrwHX9MzSAHaEK?cb=iwp1&rs=1&pid=ImgDetMain');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.list-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.list {
+  background-color: #ebecf0;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  margin-right: 15px;
+  min-height: 100px;
+  width: 250px;
+  flex-shrink: 0;
+  overflow-x:auto;
+}
+
+.add-board-form {
+  padding: 8px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.list-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #172b4d;
+  cursor: pointer;
+}
+
+.title-input,
+.content-input {
+  border: 1px solid #dfe1e6;
+  border-radius: 10px;
+  padding: 4px;
+  width: 100%;
+}
+
+.content-input {
+  padding: 8px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.delete-btn,
+.delete-item-btn,
+.add-item-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn {
+  color: #6b778c;
+  font-size: 20px;
+}
+
+.delete-item-btn {
+  color: #b3bac5;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.add-item-btn {
+  text-align: left;
+  color: #6b778c;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.add-item-btn span {
+  margin-right: 4px;
+}
+
+.item {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  cursor: grab;
+  margin-bottom: 5px;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.item-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.item-content {
+  color: #172b4d;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.edit-item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-btn {
+  background-color: #0079bf;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
