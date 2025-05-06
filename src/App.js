@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import Board from './components/Board';
-import { FixedSizeList as List } from 'react-window';
+import { FixedSizeList} from 'react-window';
 import './styles.css';
 
 const App = () => {
@@ -153,7 +153,7 @@ const App = () => {
     <div className="main-container">
       <h1 className="title">Personal Task Board</h1>
       <div className="list-container">
-        <List
+        <FixedSizeList
           height={460}
           itemCount={boards.length}
           itemSize={300}
@@ -161,7 +161,7 @@ const App = () => {
           width={1000}
         >
           {BoardRow}
-        </List>
+        </FixedSizeList>
         <div className="list">
           {isAddingBoard ? (
             <div className="add-board-form">
