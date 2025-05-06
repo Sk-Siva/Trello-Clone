@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Item from "./Item";
+import { FixedSizeList as List } from "react-window";
 import "../styles.css";
 
 const Board = ({
@@ -31,12 +32,20 @@ const Board = ({
         setIsEditingTitle(false);
     };
 
+    const ItemRow = ({ index, style }) => (
+        <div style={style}>
+            <Item
+                item={board.items[index]}
+                boardId={board.id}
+                onEdit={onEditItem}
+                onDelete={onDeleteItem}
+                onDragStart={onDragStart}
+            />
+        </div>
+    );
+
     return (
-        <div
-            className="list"
-            onDragOver={onDragOver}
-            onDrop={() => onDrop(board.id)}
-        >
+        <div className="list" onDragOver={onDragOver} onDrop={() => onDrop(board.id)}>
             <div className="list-header">
                 {isEditingTitle ? (
                     <input
@@ -49,32 +58,22 @@ const Board = ({
                         autoFocus
                     />
                 ) : (
-                    <h2
-                        className="list-title"
-                        onClick={() => setIsEditingTitle(true)}
-                    >
+                    <h2 className="list-title" onClick={() => setIsEditingTitle(true)}>
                         {board.title}
                     </h2>
                 )}
-                <button
-                    onClick={() => onDeleteBoard(board.id)}
-                    className="delete-btn"
-                >
-                    ×
-                </button>
+                <button onClick={() => onDeleteBoard(board.id)} className="delete-btn">×</button>
             </div>
 
             <div className="items-container">
-                {board.items.map(item => (
-                    <Item
-                        key={item.id}
-                        item={item}
-                        boardId={board.id}
-                        onEdit={onEditItem}
-                        onDelete={onDeleteItem}
-                        onDragStart={onDragStart}
-                    />
-                ))}
+                <List
+                    height={320}
+                    itemCount={board.items.length}
+                    itemSize={50}
+                    width={200}
+                >
+                    {ItemRow}
+                </List>
             </div>
 
             {isAddingCard ? (
@@ -91,10 +90,7 @@ const Board = ({
                     />
                 </div>
             ) : (
-                <button
-                    onClick={() => setIsAddingCard(true)}
-                    className="add-item-btn"
-                >
+                <button onClick={() => setIsAddingCard(true)} className="add-item-btn">
                     <span>+</span> Add a Card
                 </button>
             )}

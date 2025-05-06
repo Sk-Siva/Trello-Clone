@@ -27,11 +27,6 @@ const Item = ({ item, boardId, onEdit, onDelete, onDragStart }) => {
                         className="content-input"
                         autoFocus
                     />
-                    <div className="save-btn-container">
-                        <button onClick={handleSave} className="save-btn">
-                            Save
-                        </button>
-                    </div>
                 </div>
             ) : (
                 <div className="item-content-container">
