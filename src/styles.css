@@ -15,8 +15,7 @@ html, body{
   width: 100vw;
   padding: 30px;
   box-sizing: border-box;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
